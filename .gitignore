@@ -1,0 +1,20 @@
+### Compiled executables (OS-specific binaries)
+
+*.exe
+*.o
+*.obj
+my_program
+telecom_router 
+
+### Embedded Databases and Runtime state logs
+
+*.db
+*.db-journal
+*.sqlite
+telecom_network.db 
+
+### Developer environment and local editor settings
+
+.vscode/
+*.log
+.DS_Store

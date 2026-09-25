@@ -1,177 +1,241 @@
-### Ericsson Telecom Network Routing Simulator
+Ericsson Telecom Network Routing Simulation
 
-An enterprise-grade, high-performance command-line routing matrix, telemetry tracker, and data engine simulator designed to model high-availability network handoffs, connection lifecycle workflows, and topological path mutations. 
+«A C++-based telecom network simulation that models tower load monitoring, tower identification, input validation, and simulated subscriber information through an interactive console application.»
 
-The software package implements real-time client validation algorithms, evaluates path routing costs, and dynamically logs analytical simulation results down into an embedded relational persistence layer using highly optimized transactional commits. 
+📌 Overview
 
-### 🏛️ System Architectural Blueprints & Data Pipeline
+Ericsson Telecom Network Routing Simulation is an educational C++ project designed to simulate a simplified telecom network-management scenario.
 
-The simulator adheres strictly to a decoupled structural paradigm separating high-level business simulation control logic from low-level storage engines. This separation ensures predictable CPU instruction pipeline usage, prevents race conditions during file mutation cycles, and isolates functional layers for clean unit testing. 
+The application allows the user to interact with a simulated telecom tower by providing its Tower ID, updating its network load percentage, and entering a simulated phone number.
 
-       ┌────────────────────────────────────────────────────────┐
-       │             User Interface & Terminal Layer            │
-       └───────────────────────────┬────────────────────────────┘
-                                   │
-                                   ▼ [Alphanumeric Input Streams]
-       ┌────────────────────────────────────────────────────────┐
-       │          main.cpp: Core Routing Control Loop           │
-       ├────────────────────────────────────────────────────────┤
-       │  • Input Parsing & Buffer Scrubbing                    │
-       │  • Network Prefix & Regex Constraint Validation         │
-       │  • Call State Machine Matrix Processing                │
-       └───────────────────────────┬────────────────────────────┘
-                                   │
-                                   ▼ [Structured Data Payloads]
-       ┌────────────────────────────────────────────────────────┐
-       │             sqlite3 Interface Layer (.c / .h)          │
-       ├────────────────────────────────────────────────────────┤
-       │  • Prepared Statement Binding                          │
-       │  • Transaction Boundary Controllers (BEGIN/COMMIT)     │
-       └───────────────────────────┬────────────────────────────┘
-                                   │
-                                   ▼ [Atomic File Operations]
-       ┌────────────────────────────────────────────────────────┐
-       │           telecom_network.db Storage Target            │
-       └────────────────────────────────────────────────────────┘
+The project was created to connect fundamental C++ programming concepts with a practical telecommunications use case.
 
-### Core Architecture Components
+«Note: This is an independent educational project and is not an official Ericsson product or representation of Ericsson's internal systems.»
 
-1. **Ingress Validation Subsystem:** Intercepts real-time terminal buffer streams. It scrubs, sanitizes, and evaluates incoming alphanumeric identifiers against standardized routing criteria before committing allocations to active routing models.
-2. **Dynamic Link Topology Matrix:** Models simulated transmission nodes, signal decay paths, switching handoffs, and localized cellular tracking anomalies inside abstract software classes.
-3. **Data Logging Persistence Subsystem:** Abstracts structured application data arrays down into an optimized embedded binary database file, preserving long-term structural validation state logs across multiple testing runs.
+---
 
-### 🛠️ Hybrid Multi-Language Compilation Architecture
+🎯 Project Objectives
 
-The system database layer utilizes the industry-standard **SQLite core framework**, written in pure ANSI C. Compiling pure C codebases directly through modern object-oriented C++ standard compilers (g++) breaks compiler rules due to fundamental differences in how the two languages analyze symbols, allocate memory, and handle type safety. 
+The main objectives of this project are to:
 
-### Technical Challenges Resolved
+- Simulate a basic telecom tower-management workflow.
+- Represent tower network load using a percentage from 0–100.
+- Accept and process a simulated tower ID.
+- Validate user input.
+- Accept a phone number in a predefined format.
+- Apply C++ programming concepts to a real-world-inspired scenario.
+- Build a foundation for future telecom-network simulations.
 
-* **Strict Type Safety Overrides:** In pure C, void* return blocks (such as those generated by internal memory allocators like sqlite3MallocZero) are implicitly converted to typed destination references. C++ strictly bans implicit void* conversions. This architecture circumvents this block safely by isolating the translation pipeline into distinct modules.
-* **Forward-Declaration and Incomplete Structural Types:** Complex internal relational structs (e.g., struct ExprList_item) trigger fatal compilation flags in C++ compilers if structural allocations are evaluated out-of-order. Compiling the dependency independently eliminates symbol mismatch exceptions (error: invalid use of incomplete type).
+---
 
-### The Linkage Pipeline Solution
+⚙️ How It Works
 
-Rather than relying on risky runtime bypass mechanisms (like the -fpermissive flag), this repository implements a professional **Modular Machine Linkage Pipeline**: 
+The current simulation follows a simple interactive workflow:
 
- [sqlite3.c] ───────► (Compiled via gcc) ────────► [sqlite3.o Object Artifact] ───┐
-                                                                                  ├──► [telecom_router.exe]
- [main.cpp]  ───────► (Compiled via g++) ────────────────────────────────────────┘
+Start Program
+     ↓
+Check Tower Load
+     ↓
+Enter Tower ID
+     ↓
+Enter New Load (0–100)
+     ↓
+Enter Phone Number
+     ↓
+Process Input
+     ↓
+Simulation Completed Successfully
 
-### 🚀 Toolchain Requirements & System Configuration
+Example
 
-Before triggering setup files, verify that your development machine contains the minimum toolchain requirements outlined below: 
+=========================================
+ Ericsson Telecom Network Routing System
+=========================================
 
-Development ToolMinimum VersionOperational FocusCheck Command
-****C++ Toolchain (g++)****
-GCC v10.0+ / Clang 13+Compiles routing logic, string parsing structures, and UI blocks.g++ --version
-****C Toolchain (gcc)****
-GCC v10.0+ / Clang 13+Compiles the embedded relational subsystem core engine.gcc --version
-****Runtime Target Layer****
-Win32 / POSIX SubsystemsProvides execution threads and file management locks.N/A
-****Host Shell Environment****
-PowerShell 7+ / Bash 4+Coordinates automation pipelines and interactive testing loops.$PSVersionTable
+Check Tower Load? (Yes/No): Yes
 
-### 📦 Step-by-Step Compilation, Linkage, and Run Procedures
+Enter Tower ID: TOWER-001
 
-Execute the following terminal commands sequentially to clean, assemble, link, and run your program: 
+Enter new load (0-100): 72
 
-### 1. Compile the Isolated C Storage Translation Layer
+Enter phone number (format: 555-0192): 555-0192
 
-Isolate the pure ANSI C database file properties down into a safe, cross-compatible binary machine object file artifact: 
+Simulation completed successfully.
 
-bash
+---
 
-gcc -c sqlite3.c -o sqlite3.o
+📡 Telecom Concept
 
-Use code with caution.
+In a real telecommunications environment, network towers handle varying amounts of traffic.
 
-*Note: A successful pass will exit instantly with zero console output text, indicating that the sqlite3.o file has been created.* 
+This project represents tower utilization using a simple percentage:
 
-### 2. Assemble and Bind the Object Artifact to the Core Application
+0%    → Low utilization
+25%   → Low utilization
+50%   → Moderate utilization
+75%   → High utilization
+100%  → Maximum utilization
 
-Compile your custom object-oriented C++ simulation mechanics while binding the previously generated sqlite3.o binary object artifact into a single final unified program: 
+For example:
 
-bash
+Tower ID: TOWER-001
+Load: 72%
 
-g++ main.cpp sqlite3.o -o telecom_router
+represents a simulated tower operating at 72% load.
 
-Use code with caution.
+The load values in this project are simulated data and do not represent live telecom-network measurements.
 
-### 3. Initialize the Production Terminal Executable
+---
 
-Trigger the standalone binary directly within your local shell workspace terminal layer to initiate active testing parameters: 
+🛠️ Technologies Used
 
-bash
+- C++
+- Object-Oriented Programming concepts
+- Conditional statements
+- Functions
+- User input/output
+- Input validation
+- Console-based application
+- Git & GitHub
 
-.\telecom_router.exe
+---
 
-Use code with caution.
+🧠 C++ Concepts Practiced
 
-### 📊 Application Live Telemetry & Usage Workflow
+This project provides practical experience with:
 
-When running a production pass of the software package, follow this operational workflow model: 
+- Variables and data types
+- "if/else" conditions
+- Functions
+- User input
+- String handling
+- Numeric validation
+- Loops
+- Program flow
+- Console output
+- Basic software structure
 
-### Step 1: Database Hook Acquisition
+---
 
-The system securely boots up, hooks into the local disk storage layer, verifies the structural schema, and gracefully releases the initial database handle to ensure zero corruption on boot: 
+▶️ How to Run
 
-text
+Requirements
 
-[Database] Connection closed successfully.
-Simulation Complete.
+You need:
 
-Use code with caution.
+- A C++ compiler
+- Visual Studio Code, Visual Studio, or another C++ IDE
+- Git (optional)
 
-### Step 2: Awaiting Telemetry Inputs
+Compile
 
-The terminal prompt safely halts thread execution and opens up an input stream channel, waiting for a simulated cellular mobile tracking format: 
+Using GCC:
 
-text
+g++ main.cpp -o telecom_simulation
 
-Enter Mobile Number(example 555-0192):
+Run on Windows
 
-Use code with caution.
+telecom_simulation.exe
 
-### Step 3: Simulation Processing
+Run on Linux/macOS
 
-Type your desired testing identifier pattern (e.g., 3456789) directly into the active prompt and press the **Enter** key: 
+./telecom_simulation
 
-text
+---
 
-Enter Mobile Number(example 555-0192):3456789
+🧪 Example Test Case
 
-Use code with caution.
+Input:
 
-The application captures this buffer block, feeds it into the underlying parsing state engine, maps connection logs dynamically down to telecom_network.db, and executes the simulation matrix. 
+Tower Load Check: Yes
+Tower ID: TOWER-001
+Load: 72
+Phone Number: 555-0192
 
-### 📂 Data Dictionary & Storage Schema Mapping
+Result:
 
-The simulation runtime automatically spins up and interacts with a localized binary data store titled telecom_network.db. The table below outlines the structural schema definitions used to store simulation state properties: 
+Simulation completed successfully.
 
-### Active Simulation Log Schema
+The application validates and processes the provided information as part of the simulated telecom workflow.
 
-* **session_id** (INTEGER, Primary Key): Autoincrementing unique key assigned to each simulation thread execution window.
-* **device_identity** (TEXT): Stores sanitized cellular contact keys passed via the terminal interface.
-* **connection_timestamp** (DATETIME): Automatically captures the execution time to record historical data metrics accurately.
-* **routing_status** (TEXT): Logs the outcome of the matrix calculation (e.g., 'SUCCESS', 'FAILED', 'ROUTING_BLOCKED').
+---
 
-### 📂 Repository Layout Reference
+⚠️ Current Scope
 
-The structure of the repository workspace directory tree is maintained as follows to keep source units completely separate from generated operational data: 
+This project is intentionally a simplified simulation.
 
-text
+It does not currently connect to:
 
-├── main.cpp              # Core C++ application file containing main logic loops
-├── sqlite3.c             # Production-grade embedded SQL database engine file
-├── sqlite3.h             # C header configuration file for SQLite engine bindings
-├── sqlite3.o             # Pre-compiled machine object file (Generated during build step 1)
-├── telecom_router.exe    # Final production standalone output binary (Generated during build step 2)
-├── telecom_network.db    # Transactional relational database data file (Generated at runtime)
-├── .gitignore            # Tells Git which files to exclude from source control tracking
-└── README.md             # This enterprise system overview document
+- Real telecom towers
+- Ericsson network equipment
+- Live cellular networks
+- Real subscriber databases
+- Production network infrastructure
+- Live network traffic
 
-Use code with caution.
+All tower information, load values, and phone numbers are simulated for educational purposes.
 
-### 🔒 Security, Integrity, and Code Quality Standards
+---
 
-* **Repository Cleanliness Controls:** Local binaries (.exe), transitional machine code artifacts (.o), and database instances (.db) are banned from uploading to GitHub via strict tracking exclusions managed within the .gitignore setup. This keeps code commits lightweight and secure.
+🚀 Future Improvements
+
+The project can be expanded into a more advanced telecom-network simulation.
+
+Potential future features include:
+
+- Multiple telecom towers
+- Real-time tower-load monitoring
+- Network topology visualization
+- Traffic distribution simulation
+- Tower overload detection
+- Alternative routing
+- Network failure simulation
+- Data logging
+- Performance statistics
+- Graph-based routing algorithms
+- AI-assisted network optimization
+
+Future development could eventually transform the project from a basic console simulation into a more comprehensive telecom network-management simulator.
+
+---
+
+📚 Learning Outcome
+
+This project helped me apply C++ programming concepts to a practical engineering scenario rather than working only with isolated programming exercises.
+
+It provided hands-on experience with:
+
+Programming → Input Validation → Simulation → Network Concepts → Software Engineering
+
+---
+
+👨‍💻 Author
+
+Abdullah Khan
+
+Computer Science Student | C++ Developer | Aspiring AI & Technology Engineer
+
+Interests
+
+- Software Engineering
+- Artificial Intelligence
+- Computer Networks
+- Telecommunications
+- Network Automation
+- Distributed Systems
+
+---
+
+⭐ Project Status
+
+Status: Completed — Initial Simulation
+
+Type: Educational / Student Portfolio Project
+
+Language: C++
+
+Domain: Telecommunications / Network Simulation
+
+---
+
+«Built with C++ to explore the intersection of software engineering and telecommunications.»

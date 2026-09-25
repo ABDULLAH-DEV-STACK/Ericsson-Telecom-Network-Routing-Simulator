@@ -1,76 +1,52 @@
 Ericsson Telecom Network Routing Simulation
 
-A C++-based telecom simulation project focused on tower load monitoring, input validation, and simulated subscriber information.
+A C++-based telecom network simulation that models tower load monitoring, tower identification, input validation, and simulated subscriber information through an interactive console application.
 
-"C++" (https://img.shields.io/badge/C%2B%2B-17-blue?logo=cplusplus)
-"Status" (https://img.shields.io/badge/Status-Completed-success)
-"Project Type" (https://img.shields.io/badge/Project-Student%20Portfolio-purple)
-"Domain" (https://img.shields.io/badge/Domain-Telecommunications-orange)
+📌 Overview
 
----
+Ericsson Telecom Network Routing Simulation is an educational C++ project designed to simulate a simplified telecom network-management scenario.
 
-Overview
+The application allows the user to interact with a simulated telecom tower by providing its Tower ID, updating its network load percentage, and entering a simulated phone number.
 
-Ericsson Telecom Network Routing Simulation is an independent C++ project created to explore how programming concepts can be applied to a simplified telecommunications scenario.
+The project was created to connect fundamental C++ programming concepts with a practical telecommunications use case.
 
-The application provides an interactive console workflow where the user can:
-
-- Check tower load
-- Enter a tower ID
-- Provide a tower load percentage
-- Enter a simulated phone number
-- Validate and process the provided information
-- Complete the telecom simulation
-
-The project focuses on connecting C++ programming fundamentals with a practical engineering use case.
-
-«Disclaimer: This is an independent educational project. It is not an official Ericsson product and does not connect to Ericsson's internal or production systems.»
+Note: This is an independent educational project and is not an official Ericsson product or representation of Ericsson's internal systems.
 
 ---
 
-Project Goal
+🎯 Project Objectives
 
-The goal of this project is to move beyond basic programming exercises and apply C++ concepts to a scenario inspired by real-world telecommunications.
+The main objectives of this project are to:
 
-The project explores the relationship between:
-
-C++ Programming
-       ↓
-Input Processing
-       ↓
-Validation
-       ↓
-Telecom Simulation
-       ↓
-Network Concepts
+- Simulate a basic telecom tower-management workflow.
+- Represent tower network load using a percentage from 0–100.
+- Accept and process a simulated tower ID.
+- Validate user input.
+- Accept a phone number in a predefined format.
+- Apply C++ programming concepts to a real-world-inspired scenario.
+- Build a foundation for future telecom-network simulations.
 
 ---
 
-How the Simulation Works
+⚙️ How It Works
 
-The current version follows a simple interactive workflow:
+The current simulation follows a simple interactive workflow:
 
-Start
-  │
-  ▼
+Start Program
+     ↓
 Check Tower Load
-  │
-  ▼
+     ↓
 Enter Tower ID
-  │
-  ▼
-Enter Load (0–100)
-  │
-  ▼
+     ↓
+Enter New Load (0–100)
+     ↓
 Enter Phone Number
-  │
-  ▼
-Process Information
-  │
-  ▼
-Simulation Completed
+     ↓
+Process Input
+     ↓
+Simulation Completed Successfully
 
-Example Run
+Example
 
 =========================================
  Ericsson Telecom Network Routing System
@@ -88,112 +64,68 @@ Simulation completed successfully.
 
 ---
 
-Telecom Concept
+📡 Telecom Concept
 
-Telecommunication towers can experience different levels of network traffic.
+In a real telecommunications environment, network towers handle varying amounts of traffic.
 
-This project represents tower utilization using a percentage between 0 and 100.
+This project represents tower utilization using a simple percentage:
 
-Load| Simulated Meaning
-0%| Very low utilization
-25%| Low utilization
-50%| Moderate utilization
-75%| High utilization
-100%| Maximum utilization
+0%    → Low utilization
+25%   → Low utilization
+50%   → Moderate utilization
+75%   → High utilization
+100%  → Maximum utilization
 
 For example:
 
-Tower ID : TOWER-001
-Load     : 72%
+Tower ID: TOWER-001
+Load: 72%
 
-represents a simulated tower with a 72% load level.
+represents a simulated tower operating at 72% load.
 
-«The load values used by this project are simulated and do not represent live telecom-network measurements.»
-
----
-
-Key Features
-
-Tower Load Input
-
-The program accepts a tower-load value between:
-
-0 – 100
-
-This provides a simple representation of tower utilization.
-
-Tower Identification
-
-Each simulated tower can be identified using a tower ID.
-
-Example:
-
-TOWER-001
-
-Phone Number Input
-
-The program accepts a phone number using the expected format:
-
-555-0192
-
-The number is used only as simulated input.
-
-Input Validation
-
-The program processes user input and applies validation to the provided values.
-
-Interactive Console
-
-The application operates through a simple command-line interface, making the simulation easy to run and test.
+The load values in this project are simulated data and do not represent live telecom-network measurements.
 
 ---
 
-Technology Stack
+🛠️ Technologies Used
 
-Technology| Purpose
-C++| Core application
-C++ Standard Library| Basic programming functionality
-Console I/O| User interaction
-Git| Version control
-GitHub| Source-code hosting
+- C++
+- Object-Oriented Programming concepts
+- Conditional statements
+- Functions
+- User input/output
+- Input validation
+- Console-based application
+- Git & GitHub
 
 ---
 
-C++ Concepts
+🧠 C++ Concepts Practiced
 
 This project provides practical experience with:
 
 - Variables and data types
-- Conditional statements
+- "if/else" conditions
 - Functions
+- User input
+- String handling
+- Numeric validation
 - Loops
-- User input/output
-- Strings
-- Input validation
-- Program control flow
-- Basic error handling
-- Console applications
+- Program flow
+- Console output
+- Basic software structure
 
 ---
 
-Running the Project
+▶️ How to Run
 
 Requirements
 
-Before running the project, install:
+You need:
 
 - A C++ compiler
 - Visual Studio Code, Visual Studio, or another C++ IDE
-
-A compiler supporting modern C++ standards is recommended.
-
-Clone the Repository
-
-git clone https://github.com/YOUR-USERNAME/Ericsson-Telecom-Network-Routing-Simulation.git
-
-Then:
-
-cd Ericsson-Telecom-Network-Routing-Simulation
+- Git (optional)
 
 Compile
 
@@ -211,24 +143,26 @@ Run on Linux/macOS
 
 ---
 
-Example Test
+🧪 Example Test Case
 
-Input
+Input:
 
 Tower Load Check: Yes
 Tower ID: TOWER-001
 Load: 72
 Phone Number: 555-0192
 
-Output
+Result:
 
 Simulation completed successfully.
 
+The application validates and processes the provided information as part of the simulated telecom workflow.
+
 ---
 
-Project Scope
+⚠️ Current Scope
 
-This project is a simulation, not a production telecommunications system.
+This project is intentionally a simplified simulation.
 
 It does not currently connect to:
 
@@ -239,70 +173,49 @@ It does not currently connect to:
 - Production network infrastructure
 - Live network traffic
 
-All tower IDs, load values, and phone numbers are simulated for educational purposes.
+All tower information, load values, and phone numbers are simulated for educational purposes.
 
 ---
 
-Future Development
+🚀 Future Improvements
 
-The current implementation provides a foundation for expanding the project.
+The project can be expanded into a more advanced telecom-network simulation.
 
-Possible future improvements include:
+Potential future features include:
 
-- [ ] Multiple tower management
-- [ ] Real-time tower-load simulation
-- [ ] Tower overload detection
-- [ ] Network topology visualization
-- [ ] Multiple network nodes
-- [ ] Traffic distribution simulation
-- [ ] Network failure simulation
-- [ ] Automatic rerouting
-- [ ] Data logging
-- [ ] Network performance statistics
-- [ ] Graph-based routing algorithms
-- [ ] AI-assisted network optimization
+- Multiple telecom towers
+- Real-time tower-load monitoring
+- Network topology visualization
+- Traffic distribution simulation
+- Tower overload detection
+- Alternative routing
+- Network failure simulation
+- Data logging
+- Performance statistics
+- Graph-based routing algorithms
+- AI-assisted network optimization
 
-A future version could evolve toward a more advanced telecom network-management and routing simulator.
-
----
-
-Learning Outcome
-
-This project helped apply C++ programming concepts to a practical engineering scenario.
-
-Instead of using programming concepts only in isolated exercises, the project combines them into a single application:
-
-Programming
-     +
-Input Validation
-     +
-Simulation
-     +
-Telecommunications
-     ↓
-Practical C++ Project
+Future development could eventually transform the project from a basic console simulation into a more comprehensive telecom network-management simulator.
 
 ---
 
-Project Information
+📚 Learning Outcome
 
-Category| Details
-Project Type| Student Portfolio
-Language| C++
-Domain| Telecommunications
-Application Type| Console Simulation
-Status| Initial Version
-Purpose| Educational / Engineering Practice
+This project helped me apply C++ programming concepts to a practical engineering scenario rather than working only with isolated programming exercises.
+
+It provided hands-on experience with:
+
+Programming → Input Validation → Simulation → Network Concepts → Software Engineering
 
 ---
 
-Author
+👨‍💻 Author
 
 Abdullah Khan
 
-Computer Science Student
+Computer Science Student | C++ Developer | Aspiring AI & Technology Engineer
 
-Interested in:
+Interests
 
 - Software Engineering
 - Artificial Intelligence
@@ -313,16 +226,16 @@ Interested in:
 
 ---
 
-License
+⭐ Project Status
 
-This project is intended for educational and portfolio purposes.
+Status: Completed — Initial Simulation
 
-If you decide to open-source the project, an appropriate license such as the MIT License can be added to the repository.
+Type: Educational / Student Portfolio Project
+
+Language: C++
+
+Domain: Telecommunications / Network Simulation
 
 ---
 
-<div align="center">Built with C++
-
-Exploring the intersection of software engineering and telecommunications.
-
-</div>
+Built with C++ to explore the intersection of software engineering and telecommunications.
